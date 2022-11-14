@@ -27,16 +27,20 @@ public class StaticVariable {
     }
 
     private static void printCounts() {
+        System.out.println("-----------------------------");
         System.out.println("SampleA's count = " + SampleA.getCount());
         System.out.println("SampleB's count = " + SampleB.getCount());
+        System.out.println();
     }
 
     public static void main(String[] args) {
         SampleA sampleA1 = new SampleA();
         SampleA sampleA2 = new SampleA();
+        // SA = 2, SB = 0
         printCounts();
 
         SampleB sampleB1 = new SampleB();
+        // SA = 2, SB = 1
         printCounts();
     }
 }

@@ -10,6 +10,6 @@ public class SimpleList {
     }
 
     public String toString() {
-        return "This is v1 version of list. List: " + dataList;
+        return "This is v2 version of list. List: " + dataList;
     }
 }
