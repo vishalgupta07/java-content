@@ -21,13 +21,13 @@ public class HandledSimpleException {
                 Student s = students.get(i);
                 System.out.println(s.introduce());
             }
-            catch (IllegalArgumentException e) {
-                System.out.println("We got an IllegalArgumentsException.");
-            }
-            catch (IndexOutOfBoundsException e) {
-                // Do nothing. Ignore this exception.
-                System.out.println(e.getMessage());
-            }
+//            catch (IllegalArgumentException e) {
+//                System.out.println("We got an IllegalArgumentsException.");
+//            }
+//            catch (IndexOutOfBoundsException e) {
+//                // Do nothing. Ignore this exception.
+//                System.out.println(e.getMessage());
+//            }
             catch (Exception e) {
                 System.out.println("Got an exception of type: " + e.getClass());
             }

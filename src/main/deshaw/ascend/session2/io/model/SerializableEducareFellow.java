@@ -2,6 +2,9 @@ package deshaw.ascend.session2.io.model;
 
 import deshaw.ascend.common.model.course.EducareCourse;
 
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -15,10 +18,10 @@ public class SerializableEducareFellow implements Serializable {
     private List<EducareCourse> mySubscribedCourses;
 
     // Adding this field after serialization should break deserialization.
-    // private int myField;
+//     private int myField;
 
     // Enable the below to avoid InvalidClassException even with additional fields.
-    // private static final long serialVersionUID = 1L;
+     private static final long serialVersionUID = 1L;
 
     public SerializableEducareFellow(
             String firstName,
@@ -68,19 +71,19 @@ public class SerializableEducareFellow implements Serializable {
      /**
       * Custom readObject.
       */
-//     private void readObject(ObjectInputStream is) throws ClassNotFoundException, IOException {
-//         myFirstName = (String) is.readObject();
-//         myLastName = (String) is.readObject();
-//         System.out.println("De-serialized object with custom logic");
-//     }
+     private void readObject(ObjectInputStream is) throws ClassNotFoundException, IOException {
+         myFirstName = (String) is.readObject();
+         myLastName = (String) is.readObject();
+         System.out.println("De-serialized object with custom logic");
+     }
 
      /**
       * Custom writeObject.
       */
-//     private void writeObject(ObjectOutputStream os) throws IOException {
-//         // Note that the order of reading and writing is important.
-//         os.writeObject(myFirstName);
-//         os.writeObject(myLastName);
-//         System.out.println("Serialized object with custom logic");
-//     }
+     private void writeObject(ObjectOutputStream os) throws IOException {
+         // Note that the order of reading and writing is important.
+         os.writeObject(myFirstName);
+         os.writeObject(myLastName);
+         System.out.println("Serialized object with custom logic");
+     }
 }
